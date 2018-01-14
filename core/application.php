@@ -29,7 +29,7 @@ class Application {
             $this->url_controller = new $this->url_controller();            
             if (method_exists($this->url_controller, $this->url_action)) {
                 if (!empty($this->url_params)) {                    
-                    call_user_func_array(array($this->url_controller, $this->url_action), $this->url_params);
+                    call_user_func_array([$this->url_controller, $this->url_action], $this->url_params);
                 } else {                    
                     $this->url_controller->{$this->url_action}();
                 }
