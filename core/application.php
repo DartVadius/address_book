@@ -16,7 +16,7 @@ class Application {
      * Analyze the URL elements and calls the according controller/method or the fallback
      */
     public function __construct() {        
-        set_exception_handler(array(get_class($this), "getStaticException"));
+        set_exception_handler([get_class($this), "getStaticException"]);
         session_start();
     }
     
