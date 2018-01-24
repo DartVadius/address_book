@@ -1,5 +1,4 @@
 <?php
-
 /**
  * indexController
  *
@@ -7,8 +6,11 @@
  */
 class indexController extends baseController {
 
-    public function indexAction() {        
-        header("Location: /user/index");
+    public function indexAction() {
+        $param = [
+            ['index/index', []]
+        ];
+        $this->view->render($param);
     }    
 
 }

@@ -8,7 +8,7 @@
 final class pdoLib {
 
     private $pdo;
-    
+
     public static function getInstance() {
         static $inst = null;
         if ($inst === null) {
@@ -20,25 +20,26 @@ final class pdoLib {
     public function getPDO() {
         return $this->pdo;
     }
-    private function __construct() {        
-        $dsn = "mysql:host=localhost;dbname=registration;charset=utf8";
+
+    private function __construct() {
+        $dsn = "mysql:host=localhost;dbname=addressbook;charset=utf8";
         $opt = array(
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         );
-        $this->pdo = new PDO($dsn, 'root', '', $opt);        
+        $this->pdo = new PDO($dsn, 'root', '1111', $opt);
     }
 
     private function __clone() {
-        
+
     }
-    
+
     private function __sleep() {
-        
+
     }
-    
+
     private function __wakeup() {
-        
+
     }
 
 }

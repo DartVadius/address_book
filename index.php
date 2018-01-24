@@ -4,7 +4,8 @@ define('ROOT', (__DIR__) . DIRECTORY_SEPARATOR);
 function autoloadMain($class) {
     preg_match_all('/[A-Z][^A-Z]*/', $class, $results);
     $results =  end($results[0]);
-    $pathToClassFile = __DIR__ . '/'. strtolower($results). '/' . $class.'.php';
+    $pathToClassFile = __DIR__ . '/'. strtolower($results). '/' . lcfirst($class).'.php';
+
     if (file_exists($pathToClassFile)) {
         require_once $pathToClassFile;
     }
